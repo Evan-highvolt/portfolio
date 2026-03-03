@@ -64,6 +64,34 @@ contactModal.addEventListener('click', e => {
   }
 });
 
+// NAV BAR TOGGLE (mobile)
+const nav = document.getElementById('nav');
+const navToggle = document.getElementById('navToggle');
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+  // close menu when a link is clicked
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (nav.classList.contains('open')) nav.classList.remove('open');
+    });
+  });
+}
+
+// SCROLL TO TOP
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 300) {
+    scrollTopBtn.classList.add('show');
+  } else {
+    scrollTopBtn.classList.remove('show');
+  }
+});
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && contactModal.classList.contains('open')) {
     contactModal.classList.remove('open');

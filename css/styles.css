@@ -218,6 +218,59 @@ nav a {
 nav a:hover {
   color: var(--accent);
 }
+nav {
+  /* hamburger toggle */
+}
+nav .nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+nav .nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--accent);
+  transition: transform 0.3s;
+}
+nav.open ul {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+nav.open .nav-toggle span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+nav.open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+nav.open .nav-toggle span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+nav {
+  /* mobile layout */
+}
+@media (max-width: 768px) {
+  nav .nav-toggle {
+    display: flex;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 72px;
+    right: 24px;
+    background: var(--bg);
+    padding: 20px 24px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 150;
+  }
+}
 
 @keyframes pulse {
   0%, 100% {
@@ -622,7 +675,7 @@ h2 {
 
 .contact-big {
   font-family: "Syne", sans-serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(100%, 6vw, 5rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -719,12 +772,14 @@ textarea {
   background: var(--bg);
   padding: 48px 32px;
   max-width: 800px;
-  width: 90%;
+  width: 100%;
   position: relative;
   border-radius: 8px;
 }
 .modal .contact-section {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   grid-template-columns: 1fr;
   gap: 32px;
 }
@@ -752,6 +807,38 @@ footer {
   align-items: center;
   font-size: 0.7rem;
   color: var(--muted);
+}
+
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 40px;
+  height: 40px;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 1.25rem;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 600px) {
+  .scroll-top {
+    right: 16px;
+    bottom: 16px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
