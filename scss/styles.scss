@@ -1,0 +1,21 @@
+﻿// partials directory imports organized by category
+
+// base utilities and settings
+@use 'partials/base/variables';
+@use 'partials/base/mixins';
+@use 'partials/base/base';
+
+// utilities
+@use 'partials/utils/responsive';
+
+// components
+@use 'partials/components/cursor';
+@use 'partials/components/nav';
+@use 'partials/components/hero';
+@use 'partials/components/buttons';
+@use 'partials/components/stats';
+@use 'partials/components/services';
+@use 'partials/components/projects';
+@use 'partials/components/contact';
+@use 'partials/components/modal';
+@use 'partials/components/footer';

@@ -24,7 +24,7 @@
     <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#projects">Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="contact-trigger">Contact</a></li>
     </ul>
   </div>
   <span class="nb" id="bClose">/&gt;</span>
@@ -51,19 +51,16 @@
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">Voir mes projets →</a>
-      <a href="#contact" class="btn-outline">Me contacter</a>
+      <a href="#contact" class="btn-outline contact-trigger">Me contacter</a>
     </div>
   </div>
 </section>
 
 <!-- STATS -->
 <div class="stats reveal">
+  
   <div class="stat-item">
-    <div class="stat-num">12+</div>
-    <div class="stat-label">Projets livrés</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">3</div>
+    <div class="stat-num">3+</div>
     <div class="stat-label">Années d'exp.</div>
   </div>
   <div class="stat-item">
@@ -155,40 +152,43 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-tag reveal">Contact</div>
-  <div class="contact-section reveal">
-    <div>
-      <div class="contact-big">Travaillons<br>ensemble<span class="accent">.</span></div>
-      <div class="contact-desc">Un projet en tête ? Discutons-en. Je réponds dans les 24h ouvrées.</div>
-      <div class="contact-links">
-        <a href="mailto:alex@votredomaine.fr" class="contact-link">
-          <span class="contact-link-icon">✉</span>alex@votredomaine.fr
-        </a>
-        <a href="#" class="contact-link">
-          <span class="contact-link-icon">in</span>linkedin.com/in/alexdev
-        </a>
-        <a href="#" class="contact-link">
-          <span class="contact-link-icon">gh</span>github.com/alexdev
-        </a>
+<!-- CONTACT (modal) -->
+<section id="contact" class="modal" aria-hidden="true">
+  <div class="modal-container">
+    <span class="close-modal" role="button" aria-label="Fermer">×</span>
+    <div class="section-tag reveal">Contact</div>
+    <div class="contact-section reveal">
+      <div>
+        <div class="contact-big">Travaillons<br>ensemble<span class="accent">.</span></div>
+        <div class="contact-desc">Un projet en tête ? Discutons-en. Je réponds dans les 24h ouvrées.</div>
+        <div class="contact-links">
+          <a href="mailto:alex@votredomaine.fr" class="contact-link">
+            <span class="contact-link-icon">✉</span>alex@votredomaine.fr
+          </a>
+          <a href="#" class="contact-link">
+            <span class="contact-link-icon">in</span>linkedin.com/in/alexdev
+          </a>
+          <a href="#" class="contact-link">
+            <span class="contact-link-icon">gh</span>github.com/alexdev
+          </a>
+        </div>
       </div>
+      <form onsubmit="return false;">
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" placeholder="Jean Dupont">
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="jean@exemple.fr">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea placeholder="Décrivez votre projet..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Envoyer le message →</button>
+      </form>
     </div>
-    <form onsubmit="return false;">
-      <div class="form-group">
-        <label>Nom</label>
-        <input type="text" placeholder="Jean Dupont">
-      </div>
-      <div class="form-group">
-        <label>Email</label>
-        <input type="email" placeholder="jean@exemple.fr">
-      </div>
-      <div class="form-group">
-        <label>Message</label>
-        <textarea placeholder="Décrivez votre projet..."></textarea>
-      </div>
-      <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Envoyer le message →</button>
-    </form>
   </div>
 </section>
 

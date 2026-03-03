@@ -1,0 +1,37 @@
+@use '../base/variables' as *;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  overflow-y: auto;
+  &.open { display: flex; }
+  .modal-container {
+    flex-direction: column;
+    background: var(--bg);
+    padding: 48px 32px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    border-radius: 8px;
+  }
+  .contact-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .close-modal {
+    position: absolute;
+    top: 16px; right: 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--muted);
+    &:hover { color: var(--accent); }
+  }
+}
+
+#contact:not(.open) { display: none; }

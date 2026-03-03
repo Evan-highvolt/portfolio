@@ -1,0 +1,28 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.btn-primary,
+.btn-outline {
+  padding: 14px 28px;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  cursor: none; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  @include transition(transform, 0.2s);
+  @include transition(box-shadow, 0.2s);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+.btn-primary {
+  background: var(--accent); color: var(--bg);
+  border: none;
+  font-size: 0.8rem; font-weight: 600;
+  &:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,229,255,0.25); }
+  &.full-width { width: 100%; justify-content: center; }
+}
+.btn-outline {
+  background: transparent; color: var(--text);
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  transition: border-color 0.2s, color 0.2s;
+  &:hover { border-color: var(--accent); color: var(--accent); }
+}

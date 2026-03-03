@@ -43,3 +43,31 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ===== CONTACT MODAL =====
+const contactModal = document.getElementById('contact');
+
+document.querySelectorAll('.contact-trigger').forEach(el => {
+  el.addEventListener('click', e => {
+    e.preventDefault();
+    contactModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    contactModal.setAttribute('aria-hidden', 'false');
+  });
+});
+
+contactModal.addEventListener('click', e => {
+  if (e.target === contactModal || e.target.classList.contains('close-modal')) {
+    contactModal.classList.remove('open');
+    document.body.style.overflow = '';
+    contactModal.setAttribute('aria-hidden', 'true');
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && contactModal.classList.contains('open')) {
+    contactModal.classList.remove('open');
+    document.body.style.overflow = '';
+    contactModal.setAttribute('aria-hidden', 'true');
+  }
+});

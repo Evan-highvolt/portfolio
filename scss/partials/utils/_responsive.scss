@@ -1,0 +1,13 @@
+@use '../base/variables' as *;
+
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .hero { padding: 100px 24px 60px; }
+  section { padding: 80px 24px; }
+  .stats { padding: 40px 24px; }
+  .contact-section { grid-template-columns: 1fr; gap: 48px; }
+}
+
+@media (max-width: 600px) {
+  footer { flex-direction: column; gap: 12px; padding: 24px; }
+}
