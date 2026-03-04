@@ -8,6 +8,15 @@
   padding: 120px 48px 80px;
   position: relative;
   overflow: hidden;
+
+  /* canvas layer for particles */
+  .hero-canvas {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
   .hero-grid {
     position: absolute; inset: 0;
     background-image:

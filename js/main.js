@@ -44,6 +44,105 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+// ===== HERO PARTICLES BACKGROUND =====
+// small custom canvas particle system as a lightweight alternative to ogl
+(function() {
+  const container = document.querySelector('.hero');
+  if (!container) return;
+
+  const canvas = document.createElement('canvas');
+  canvas.className = 'hero-canvas';
+  container.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  function resize() {
+    width = container.clientWidth;
+    height = container.clientHeight;
+    canvas.width = width;
+    canvas.height = height;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  const count = 200;
+  const particles = [];
+  const palette = ['#ffffff','#ffffff','#ffffff'];
+  for (let i = 0; i < count; i++) {
+    let x, y, z, len;
+    do {
+      x = Math.random() * 2 - 1;
+      y = Math.random() * 2 - 1;
+      z = Math.random() * 2 - 1;
+      len = x * x + y * y + z * z;
+    } while (len > 1 || len === 0);
+    const r = Math.cbrt(Math.random());
+    particles.push({
+      pos: [x * r, y * r, z * r],
+      random: [Math.random(), Math.random(), Math.random(), Math.random()],
+      color: palette[Math.floor(Math.random() * palette.length)]
+    });
+  }
+
+  // track mouse inside hero for interaction
+  const mouse = { x: 0, y: 0 };
+  container.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+    mouse.y = ((e.clientY - rect.top) / rect.height) * 2 - 1;
+  });
+  container.addEventListener('mouseleave', () => {
+    mouse.x = mouse.y = 0;
+  });
+
+  let last = performance.now(), elapsed = 0;
+  function update(t) {
+    requestAnimationFrame(update);
+    const delta = t - last;
+    last = t;
+    elapsed += delta * 0.001;
+
+    ctx.clearRect(0, 0, width, height);
+    const spread = 10;
+    const baseSize = 3;
+    const sizeRandomness = 1;
+
+    particles.forEach(p => {
+      let [x, y, z] = p.pos;
+      const [r1, r2, r3, r4] = p.random;
+      x *= spread;
+      y *= spread;
+      z *= spread;
+      z *= 10;
+      const ttime = elapsed;
+      x += Math.sin(ttime * r3 + 6.28 * r4) * (0.1 + 1.4 * r1);
+      y += Math.sin(ttime * r2 + 6.28 * r1) * (0.1 + 1.4 * r4);
+      z += Math.sin(ttime * r4 + 6.28 * r2) * (0.1 + 1.4 * r3);
+
+      // simple repulsion from mouse
+      const dx = x - mouse.x * spread;
+      const dy = y - mouse.y * spread;
+      const dist2 = dx * dx + dy * dy;
+      if (dist2 < 1.0) {
+        const force = 0.03 / (dist2 + 0.001);
+        x += dx * force;
+        y += dy * force;
+      }
+
+      const scale = 1 / (1 + z * 0.1);
+      const sx = (x * scale + 1) / 2 * width;
+      const sy = (y * scale + 1) / 2 * height;
+      const size = ((baseSize * (1 + sizeRandomness * (r1 - 0.5))) / Math.sqrt(x * x + y * y + z * z)) * 10;
+
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(sx, sy, size, 0, Math.PI * 2);
+      ctx.fill();
+    });
+  }
+  update(last);
+})();
+
 // ===== CONTACT MODAL =====
 const contactModal = document.getElementById('contact');
 
