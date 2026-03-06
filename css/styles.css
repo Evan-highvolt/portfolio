@@ -25,6 +25,7 @@ body {
   font-family: "JetBrains Mono", monospace;
   overflow-x: hidden;
   cursor: none;
+  min-width: fit-content;
 }
 
 body::before {
@@ -284,7 +285,7 @@ nav {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 120px 48px 80px;
+  padding: 120px 16px 80px;
   position: relative;
   overflow: hidden;
   /* canvas layer for particles */
