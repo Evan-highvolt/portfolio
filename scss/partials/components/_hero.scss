@@ -3,9 +3,10 @@
 
 .hero {
   min-height: 100vh;
+  min-width: fit-content;
   display: flex;
   align-items: center;
-  padding: 120px 16px 80px;
+  padding: 16px 16px 0px;
   position: relative;
   overflow: hidden;
 
