@@ -78,7 +78,6 @@ nav {
     &:hover { color: var(--accent); }
   }
 
-  /* hamburger toggle */
   .nav-toggle {
     display: none;
     flex-direction: column;
@@ -108,7 +107,6 @@ nav {
     transform: rotate(-45deg) translate(5px,-5px);
   }
 
-  /* mobile layout */
   @media (max-width: 768px) {
     .nav-toggle { display: flex; }
     ul {
