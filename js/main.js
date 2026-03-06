@@ -120,14 +120,14 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
       z += Math.sin(ttime * r4 + 6.28 * r2) * (0.1 + 1.4 * r3);
 
       // simple repulsion from mouse
-      const dx = x - mouse.x * spread;
-      const dy = y - mouse.y * spread;
-      const dist2 = dx * dx + dy * dy;
-      if (dist2 < 1.0) {
-        const force = 0.03 / (dist2 + 0.001);
-        x += dx * force;
-        y += dy * force;
-      }
+      // const dx = x - mouse.x * spread;
+      // const dy = y - mouse.y * spread;
+      // const dist2 = dx * dx + dy * dy;
+      // if (dist2 < 1.0) {
+      //   const force = 0.03 / (dist2 + 0.001);
+      //   x += dx * force;
+      //   y += dy * force;
+      // }
 
       const scale = 1 / (1 + z * 0.1);
       const sx = (x * scale + 1) / 2 * width;
