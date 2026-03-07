@@ -1,12 +1,26 @@
 :root {
-  --bg: #080b0f;
+  --bg: #0E1515;
   --surface: #0d1117;
   --border: #1a2030;
   --accent: #00e5ff;
   --accent2: #7c3aed;
   --text: #e8eaf0;
   --muted: #4a5568;
-  --green: #00ff88;
+  --btn-bg: rgba(13, 17, 23, 0.8);
+  --btn-hover: rgba(0, 229, 255, 0.25);
+  --green-nav-bg: rgba(15, 27, 19, 0.3960784314);
+  --green-app-bg: #0E1512;
+  --green-subtle-bg: #0f1b13;
+  --green-ui-bg: #132819;
+  --green-ui-hover-bg: #16331d;
+  --green-ui-active-bg: #1a3f22;
+  --green-subtle-border: #1f4d28;
+  --green-ui-border: #265d2f;
+  --green-ui-hover-border: #2f7639;
+  --green-solid-bg: #30a446;
+  --green-solid-hover-bg: #2fb642;
+  --green-text-low: #3dd68c;
+  --green-text-high: #b1f1cb;
 }
 
 *, *::before, *::after {
@@ -20,7 +34,7 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background: var(--green-app-bg);
   color: var(--text);
   font-family: "JetBrains Mono", monospace;
   overflow-x: hidden;
@@ -135,15 +149,15 @@ nav {
   gap: 14px;
   z-index: 100;
   backdrop-filter: blur(12px);
-  background: rgba(8, 11, 15, 0.6);
-  border-bottom: 1px solid var(--border);
+  background: var(--green-nav-bg);
+  border-bottom: 1px solid var(--green-subtle-border);
 }
 nav .nb {
   font-family: "JetBrains Mono", monospace;
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--accent);
-  text-shadow: 0 0 14px rgba(0, 229, 255, 0.55);
+  color: var(--green-text-low);
+  text-shadow: 0 0 14px var(--green-text-high);
   opacity: 0;
   transition: opacity 0.35s ease;
   flex-shrink: 0;
@@ -156,7 +170,7 @@ nav .nb .bc {
   display: inline-block;
   width: 2px;
   height: 0.85em;
-  background: var(--accent);
+  background: var(--green-subtle-border);
   margin-left: 2px;
   vertical-align: middle;
   opacity: 0;
@@ -193,12 +207,12 @@ nav .logo {
   gap: 8px;
 }
 nav .logo span {
-  color: var(--accent);
+  color: var(--green-text-low);
 }
 nav .logo .logo-dot {
   width: 8px;
   height: 8px;
-  background: var(--green);
+  background: var(--green-solid-bg);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
@@ -208,7 +222,7 @@ nav ul {
   gap: 32px;
 }
 nav a {
-  color: var(--muted);
+  color: var(--green-text-high);
   text-decoration: none;
   font-size: 0.75rem;
   letter-spacing: 0.1em;
@@ -216,7 +230,7 @@ nav a {
   transition: color 0.2s;
 }
 nav a:hover {
-  color: var(--accent);
+  color: var(--green-text-low);
 }
 nav .nav-toggle {
   display: none;
@@ -227,7 +241,7 @@ nav .nav-toggle {
 nav .nav-toggle span {
   width: 24px;
   height: 2px;
-  background: var(--accent);
+  background: var(--green-text-low);
   transition: transform 0.3s;
 }
 nav.open ul {
@@ -255,9 +269,9 @@ nav.open .nav-toggle span:nth-child(3) {
     position: absolute;
     top: 72px;
     right: 24px;
-    background: var(--bg);
+    background: var(--green-app-bg);
     padding: 20px 24px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--green-subtle-border);
     border-radius: 8px;
     opacity: 0;
     transform: translateY(-10px);
@@ -293,7 +307,7 @@ nav.open .nav-toggle span:nth-child(3) {
 .hero .hero-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-image: linear-gradient(var(--green-ui-border) 1px, transparent 1px), linear-gradient(90deg, var(--green-ui-border) 1px, transparent 1px);
   background-size: 60px 60px;
   opacity: 0.3;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
@@ -330,24 +344,25 @@ nav.open .nav-toggle span:nth-child(3) {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--green-ui-border);
   border-radius: 100px;
   font-size: 0.7rem;
-  color: var(--muted);
+  color: var(--green-text-high);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 32px;
-  background: rgba(13, 17, 23, 0.8);
+  background: var(--green-subtle-bg);
 }
 .hero .hero-badge .dot {
   width: 6px;
   height: 6px;
-  background: var(--green);
+  background: var(--green-solid-bg);
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
 .hero h1 {
   width: 100%;
+  color: var(--green-text-high);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -373,10 +388,10 @@ nav.open .nav-toggle span:nth-child(3) {
   animation-delay: 0.2s;
 }
 .hero h1 .accent {
-  color: var(--accent);
+  color: var(--green-text-low);
 }
 .hero h1 .stroke {
-  -webkit-text-stroke: 1px var(--text);
+  -webkit-text-stroke: 1px var(--green-text-low);
   color: transparent;
 }
 @keyframes slideUp {
@@ -391,7 +406,7 @@ nav.open .nav-toggle span:nth-child(3) {
 }
 .hero .hero-sub {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--green-text-high);
   max-width: 480px;
   line-height: 1.8;
   margin-bottom: 48px;
@@ -431,15 +446,15 @@ nav.open .nav-toggle span:nth-child(3) {
 }
 
 .btn-primary {
-  background: var(--accent);
-  color: var(--bg);
+  background: var(--green-ui-bg);
+  color: var(--green-text-high);
   border: none;
   font-size: 0.8rem;
   font-weight: 600;
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 229, 255, 0.25);
+  box-shadow: 0 12px 40px var(--green-ui-hover-bg);
 }
 .btn-primary.full-width {
   width: 100%;
@@ -448,24 +463,24 @@ nav.open .nav-toggle span:nth-child(3) {
 
 .btn-outline {
   background: transparent;
-  color: var(--text);
-  border: 1px solid var(--border);
+  color: var(--green-text-high);
+  border: 1px solid var(--green-ui-border);
   font-size: 0.8rem;
   transition: border-color 0.2s, color 0.2s;
 }
 .btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--green-ui-hover-border);
+  color: var(--green-text-high);
 }
 
 .stats {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--green-subtle-border);
+  border-bottom: 1px solid var(--green-subtle-border);
   padding: 40px 48px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 32px;
-  background: var(--surface);
+  background: var(--green-subtle-bg);
 }
 .stats .stat-item {
   display: flex;
@@ -476,12 +491,12 @@ nav.open .nav-toggle span:nth-child(3) {
   font-family: "Syne", sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--accent);
+  color: var(--green-text-high);
   line-height: 1;
 }
 .stats .stat-label {
   font-size: 0.7rem;
-  color: var(--muted);
+  color: var(--green-text-low);
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -492,7 +507,7 @@ section {
 
 .section-tag {
   font-size: 0.7rem;
-  color: var(--accent);
+  color: var(--green-text-low);
   letter-spacing: 0.2em;
   text-transform: uppercase;
   margin-bottom: 16px;
@@ -505,7 +520,7 @@ section {
   display: block;
   width: 32px;
   height: 1px;
-  background: var(--accent);
+  background: var(--green-app-bg);
 }
 
 h2 {
@@ -515,17 +530,18 @@ h2 {
   letter-spacing: -0.03em;
   margin-bottom: 64px;
   line-height: 1.1;
+  color: var(--green-text-high);
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
+  background: var(--green-subtle-bg);
+  border: 1px solid var(--green-subtle-border);
 }
 .services-grid .service-card {
-  background: var(--bg);
+  background: var(--green-ui-bg);
   padding: 40px;
   position: relative;
   overflow: hidden;
@@ -540,14 +556,14 @@ h2 {
   transition: opacity 0.3s;
 }
 .services-grid .service-card:hover {
-  background: var(--surface);
+  background: var(--green-ui-hover-bg);
 }
 .services-grid .service-card:hover::before {
   opacity: 1;
 }
 .services-grid .service-card .service-num {
   font-size: 0.7rem;
-  color: var(--muted);
+  color: var(--green-text-low);
   letter-spacing: 0.15em;
   margin-bottom: 24px;
 }
@@ -560,10 +576,11 @@ h2 {
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 12px;
+  color: var(--green-text-high);
 }
 .services-grid .service-card .service-desc {
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--green-text-low);
   line-height: 1.8;
 }
 .services-grid .service-card .service-tags {
@@ -576,8 +593,8 @@ h2 {
 .tag {
   font-size: 0.65rem;
   padding: 4px 10px;
-  border: 1px solid var(--border);
-  color: var(--muted);
+  border: 1px solid var(--green-ui-border);
+  color: var(--green-text-low);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -588,23 +605,23 @@ h2 {
   gap: 16px;
 }
 .skills-section .skill-card {
-  background: linear-gradient(180deg, rgba(13, 17, 23, 0.9), rgba(8, 11, 15, 0.95));
-  border: 1px solid var(--border);
+  background: var(--green-ui-bg);
+  border: 1px solid var(--green-ui-border);
   border-radius: 10px;
   padding: 22px 18px;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .skills-section .skill-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(0, 229, 255, 0.55);
-  box-shadow: 0 10px 24px rgba(0, 229, 255, 0.12);
+  border-color: var(--green-ui-hover-border);
+  box-shadow: 0 10px 24px var(--green-subtle-bg);
 }
 .skills-section .skill-title {
   font-family: "Syne", sans-serif;
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--text);
+  color: var(--green-text-high);
   margin-bottom: 14px;
 }
 .skills-section .skill-tags {
@@ -616,11 +633,11 @@ h2 {
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
-  border: 1px solid var(--border);
+  color: var(--green-text-low);
+  border: 1px solid var(--green-subtle-border);
   border-radius: 999px;
   padding: 6px 10px;
-  background: rgba(8, 11, 15, 0.75);
+  background: var(--green-subtle-bg);
 }
 
 .projects-section {
@@ -667,8 +684,8 @@ h2 {
   color: var(--accent2);
 }
 .project-card.p3 .project-thumb-inner {
-  background: linear-gradient(135deg, #0a1a12, #0d2018);
-  color: var(--green);
+  background: linear-gradient(135deg, var(--green-app-bg), var(--green-ui-bg));
+  color: var(--green-text-high);
 }
 .project-card .project-info {
   padding: 28px;

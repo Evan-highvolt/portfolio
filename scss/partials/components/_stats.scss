@@ -1,14 +1,14 @@
 @use '../base/variables' as *;
 
 .stats {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--green-subtle-border);
+  border-bottom: 1px solid var(--green-subtle-border);
   padding: 40px 48px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 32px;
-  background: var(--surface);
+  background: var(--green-subtle-bg);
   .stat-item { display: flex; flex-direction: column; gap: 4px; }
-  .stat-num { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--accent); line-height: 1; }
-  .stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--green-text-high); line-height: 1; }
+  .stat-label { font-size: 0.7rem; color: var(--green-text-low); text-transform: uppercase; letter-spacing: 0.1em; }
 }

@@ -15,7 +15,7 @@
   &:hover .project-thumb-inner { transform: scale(1.05); }
   &.p1 .project-thumb-inner { background: linear-gradient(135deg, #0d1b2a, #162032); color: var(--accent); }
   &.p2 .project-thumb-inner { background: linear-gradient(135deg, #120d1b, #1e1230); color: var(--accent2); }
-  &.p3 .project-thumb-inner { background: linear-gradient(135deg, #0a1a12, #0d2018); color: var(--green); }
+  &.p3 .project-thumb-inner { background: linear-gradient(135deg, var(--green-app-bg), var(--green-ui-bg)); color: var(--green-text-high); }
   .project-info { padding: 28px; }
   .project-category { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px; }
   .project-name { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 8px; }

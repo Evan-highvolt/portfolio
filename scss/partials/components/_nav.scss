@@ -12,14 +12,14 @@ nav {
   gap: 14px;
   z-index: 100;
   backdrop-filter: blur(12px);
-  background: rgba(8,11,15,0.6);
-  border-bottom: 1px solid var(--border);
+  background: var(--green-nav-bg);
+  border-bottom: 1px solid var(--green-subtle-border);
   .nb {
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.05rem;
     font-weight: 600;
-    color: var(--accent);
-    text-shadow: 0 0 14px rgba(0,229,255,0.55);
+    color: var(--green-text-low);
+    text-shadow: 0 0 14px var(--green-text-high);
     opacity: 0;
     transition: opacity 0.35s ease;
     flex-shrink: 0;
@@ -29,7 +29,7 @@ nav {
       display: inline-block;
       width: 2px;
       height: 0.85em;
-      background: var(--accent);
+      background: var(--green-subtle-border);
       margin-left: 2px;
       vertical-align: middle;
       opacity: 0;
@@ -58,24 +58,24 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    span { color: var(--accent); }
+    span { color: var(--green-text-low); }
     .logo-dot {
       width: 8px;
       height: 8px;
-      background: var(--green);
+      background: var(--green-solid-bg);
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
   }
   ul { list-style: none; display: flex; gap: 32px; }
   a {
-    color: var(--muted);
+    color: var(--green-text-high);
     text-decoration: none;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: color 0.2s;
-    &:hover { color: var(--accent); }
+    &:hover { color: var(--green-text-low); }
   }
 
   .nav-toggle {
@@ -86,7 +86,7 @@ nav {
     span {
       width: 24px;
       height: 2px;
-      background: var(--accent);
+      background: var(--green-text-low);
       transition: transform 0.3s;
     }
   }
@@ -116,9 +116,9 @@ nav {
       position: absolute;
       top: 72px;
       right: 24px;
-      background: var(--bg);
+      background: var(--green-app-bg);
       padding: 20px 24px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--green-subtle-border);
       border-radius: 8px;
       opacity: 0;
       transform: translateY(-10px);

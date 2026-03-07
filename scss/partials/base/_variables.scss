@@ -1,12 +1,28 @@
 // color and theme variables
-$bg: #080b0f;
+$bg: #0E1515;
 $surface: #0d1117;
 $border: #1a2030;
 $accent: #00e5ff;
 $accent2: #7c3aed;
 $text: #e8eaf0;
 $muted: #4a5568;
-$green: #00ff88;
+$btn-bg: rgba(13,17,23,0.8);
+$btn-hover: rgba(0,229,255,0.25);
+
+// Radix-style Green Color Scale (Dark Mode)
+$green-nav-bg: #0f1b1365;              // Step 0: Navigation background
+$green-app-bg: #0E1512;              // Step 1: App background
+$green-subtle-bg: #0f1b13;           // Step 2: Subtle background
+$green-ui-bg: #132819;               // Step 3: UI element background
+$green-ui-hover-bg: #16331d;         // Step 4: Hovered UI element background
+$green-ui-active-bg: #1a3f22;        // Step 5: Active / Selected UI element background
+$green-subtle-border: #1f4d28;       // Step 6: Subtle borders and separators
+$green-ui-border: #265d2f;           // Step 7: UI element border and focus rings
+$green-ui-hover-border: #2f7639;     // Step 8: Hovered UI element border
+$green-solid-bg: #30a446;            // Step 9: Solid backgrounds
+$green-solid-hover-bg: #2fb642;      // Step 10: Hovered solid backgrounds
+$green-text-low: #3dd68c;            // Step 11: Low-contrast text
+$green-text-high: #b1f1cb;           // Step 12: High-contrast text
 
 :root {
   --bg: #{$bg};
@@ -16,5 +32,21 @@ $green: #00ff88;
   --accent2: #{$accent2};
   --text: #{$text};
   --muted: #{$muted};
-  --green: #{$green};
+  --btn-bg: #{$btn-bg};
+  --btn-hover: #{$btn-hover};
+  
+  // Green scale (Radix-style semantic colors)
+  --green-nav-bg: #{$green-nav-bg};
+  --green-app-bg: #{$green-app-bg};
+  --green-subtle-bg: #{$green-subtle-bg};
+  --green-ui-bg: #{$green-ui-bg};
+  --green-ui-hover-bg: #{$green-ui-hover-bg};
+  --green-ui-active-bg: #{$green-ui-active-bg};
+  --green-subtle-border: #{$green-subtle-border};
+  --green-ui-border: #{$green-ui-border};
+  --green-ui-hover-border: #{$green-ui-hover-border};
+  --green-solid-bg: #{$green-solid-bg};
+  --green-solid-hover-bg: #{$green-solid-hover-bg};
+  --green-text-low: #{$green-text-low};
+  --green-text-high: #{$green-text-high};
 }
