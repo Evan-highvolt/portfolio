@@ -5,6 +5,7 @@
   border-bottom: 1px solid var(--green-subtle-border);
   padding: 40px 48px;
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 32px;
   background: var(--green-subtle-bg);

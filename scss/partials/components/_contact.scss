@@ -9,18 +9,19 @@
   font-size: clamp(100%, 6vw, 5rem);
   font-weight: 800; letter-spacing: -0.04em; line-height: 1;
   margin-bottom: 24px;
+  color: var(--green-text-high);
 }
-.contact-big .accent { color: var(--accent); }
-.contact-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-bottom: 40px; }
+.contact-big .accent { color: var(--green-text-low); }
+.contact-desc { font-size: 0.85rem; color: var(--green-text-low); line-height: 1.8; margin-bottom: 40px; }
 .contact-links { display: flex; flex-direction: column; gap: 12px; }
 .contact-link {
   display: flex; align-items: center; gap: 12px;
-  font-size: 0.8rem; color: var(--muted); text-decoration: none;
+  font-size: 0.8rem; color: var(--green-text-low); text-decoration: none;
   transition: color 0.2s; padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
-.contact-link:hover { color: var(--accent); }
-.contact-link-icon { color: var(--accent); width: 20px; }
+.contact-link:hover { color: var(--green-solid-bg); }
+.contact-link-icon { color: var(--green-solid-bg); width: 20px; }
 
 .form-group { margin-bottom: 20px; }
 label { display: block; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }

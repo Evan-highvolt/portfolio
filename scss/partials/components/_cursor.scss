@@ -6,7 +6,7 @@
   position: fixed;
   width: 12px;
   height: 12px;
-  background: var(--accent);
+  background: var(--green-text-low);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -19,7 +19,7 @@
     position: fixed;
     width: 36px;
     height: 36px;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--green-text-high);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;

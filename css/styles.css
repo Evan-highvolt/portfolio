@@ -91,7 +91,7 @@ body::before {
   position: fixed;
   width: 12px;
   height: 12px;
-  background: var(--accent);
+  background: var(--green-text-low);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -105,7 +105,7 @@ body::before {
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--green-text-high);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -478,6 +478,7 @@ nav.open .nav-toggle span:nth-child(3) {
   border-bottom: 1px solid var(--green-subtle-border);
   padding: 40px 48px;
   display: grid;
+  justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 32px;
   background: var(--green-subtle-bg);
@@ -743,15 +744,16 @@ h2 {
   letter-spacing: -0.04em;
   line-height: 1;
   margin-bottom: 24px;
+  color: var(--green-text-high);
 }
 
 .contact-big .accent {
-  color: var(--accent);
+  color: var(--green-text-low);
 }
 
 .contact-desc {
   font-size: 0.85rem;
-  color: var(--muted);
+  color: var(--green-text-low);
   line-height: 1.8;
   margin-bottom: 40px;
 }
@@ -767,7 +769,7 @@ h2 {
   align-items: center;
   gap: 12px;
   font-size: 0.8rem;
-  color: var(--muted);
+  color: var(--green-text-low);
   text-decoration: none;
   transition: color 0.2s;
   padding-bottom: 12px;
@@ -775,11 +777,11 @@ h2 {
 }
 
 .contact-link:hover {
-  color: var(--accent);
+  color: var(--green-solid-bg);
 }
 
 .contact-link-icon {
-  color: var(--accent);
+  color: var(--green-solid-bg);
   width: 20px;
 }
 
@@ -863,12 +865,12 @@ textarea {
 
 footer {
   padding: 32px 48px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--green-subtle-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 0.7rem;
-  color: var(--muted);
+  color: var(--green-text-high);
 }
 
 .scroll-top {
@@ -877,7 +879,7 @@ footer {
   bottom: 80px;
   width: 40px;
   height: 40px;
-  background: var(--accent);
+  background: var(--green-text-high);
   color: var(--bg);
   font-size: 1.25rem;
   line-height: 40px;
